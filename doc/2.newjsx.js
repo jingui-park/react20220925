@@ -28,3 +28,6 @@ _jsxs("h1", {
 
 // React.createElement 约等于 _jsxs
 // 新版里面子元素放到 children 里面了 => 老版本不包括 children
+
+// === 对比
+// 以前需要在代码中手动引入 React，现在不需要手动引入 React 了。
