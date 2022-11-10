@@ -32,12 +32,12 @@ export function jsxDEV(type, config) {
     ref = config.ref
   }
   // 循环遍历 config 对象(将 config 上的属性拷贝到 props 上)
-  for(let key in config) {
+  for(propName in config) {
     // config 上的属性赋值给 props
-    if(hasOwnProperty.call(config, key)) {
+    if(hasOwnProperty.call(config, propName)) {
       // 保留属性上不存在对应的 key
-      if(!RESERVED_PROPS.hasOwnProperty(key)) {
-        props[key] = config[key]
+      if(!RESERVED_PROPS.hasOwnProperty(propName)) {
+        props[propName] = config[propName]
       }
     }
   }
@@ -61,6 +61,6 @@ function ReactElement(type, key, ref, props) {
     type, // h1, span
     key, // 唯一标识，没给
     ref, // 用来获取真实 dom 元素
-    props, // 属性 children id style
+    props, // 属性 children id style // => 里面的递归是 babel 帮我们实现的
   }
 }
